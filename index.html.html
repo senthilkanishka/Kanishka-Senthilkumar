@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S. Kanishka | Aspiring Data Analyst</title>
+<meta name="description" content="Portfolio of S. Kanishka, a B.E. Electronics and Communication Engineering student and aspiring Data Analyst.">
+<meta name="theme-color" content="#0b1f4d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b1f4d; --navy-2:#13306f; --sky:#e8f1fd; --sky-2:#cfe3fb; --purple:#7c5cff; --purple-2:#a897ff;
+  --bg:#f6f9ff; --surface:rgba(255,255,255,.72); --surface-solid:#ffffff; --text:#14213d; --muted:#5b6b88;
+  --border:rgba(19,48,111,.12); --shadow:0 10px 30px rgba(11,31,77,.08); --radius:18px;
+  --head:'Sora',system-ui,sans-serif; --body:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+[data-theme="dark"]{
+  --bg:#08122b; --surface:rgba(20,33,70,.62); --surface-solid:#0f1d42; --text:#e8eefc; --muted:#9db0d6;
+  --border:rgba(168,185,230,.16); --shadow:0 10px 30px rgba(0,0,0,.35); --sky:#10224f; --sky-2:#1b3274;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.65;transition:background .3s,color .3s;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.2;letter-spacing:-.01em}
+.container{width:min(1120px,92%);margin-inline:auto}
+section{padding:92px 0}
+.icon{width:1.2em;height:1.2em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+:focus-visible{outline:3px solid var(--purple);outline-offset:3px;border-radius:8px}
+
+/* Section headings */
+.sec-head{max-width:640px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.4rem);color:var(--navy)}
+[data-theme="dark"] .sec-head h2{color:#fff}
+.sec-head p{color:var(--muted);margin-top:10px}
+.sec-head::after{content:"";display:block;width:56px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--navy-2),var(--purple));margin-top:16px}
+
+/* Cards */
+.card{background:var(--surface);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);border-color:rgba(124,92,255,.4);box-shadow:0 16px 36px rgba(11,31,77,.14)}
+.chip-icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--sky-2),rgba(124,92,255,.22));color:var(--navy-2);font-size:1.3rem;margin-bottom:16px}
+[data-theme="dark"] .chip-icon{color:var(--purple-2)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:999px;font-weight:700;font-size:.95rem;border:2px solid transparent;cursor:pointer;font-family:var(--body);transition:transform .2s,box-shadow .2s,background .2s,color .2s}
+.btn-primary{background:linear-gradient(135deg,var(--navy-2),var(--purple));color:#fff;box-shadow:0 8px 22px rgba(124,92,255,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(124,92,255,.45)}
+.btn-outline{border-color:var(--navy-2);color:var(--navy-2);background:transparent}
+[data-theme="dark"] .btn-outline{border-color:var(--purple-2);color:var(--purple-2)}
+.btn-outline:hover{background:var(--navy-2);color:#fff;transform:translateY(-2px)}
+[data-theme="dark"] .btn-outline:hover{background:var(--purple-2);color:var(--navy)}
+.btn-sm{padding:9px 18px;font-size:.85rem}
+
+/* Navbar */
+header{position:fixed;inset:0 0 auto 0;z-index:100;background:var(--surface);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--head);font-weight:800;font-size:1.2rem;color:var(--navy)}
+[data-theme="dark"] .logo{color:#fff}
+.logo span{color:var(--purple)}
+.nav-links{display:flex;gap:6px;list-style:none;align-items:center}
+.nav-links a{padding:8px 14px;border-radius:999px;font-weight:600;font-size:.92rem;color:var(--muted);transition:.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--navy-2);background:var(--sky)}
+[data-theme="dark"] .nav-links a:hover,[data-theme="dark"] .nav-links a.active{color:#fff}
+.nav-tools{display:flex;gap:8px;align-items:center}
+.icon-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:var(--surface-solid);color:var(--text);display:grid;place-items:center;cursor:pointer;font-size:1.1rem}
+.menu-btn{display:none}
+
+/* Hero */
+#home{padding-top:150px;padding-bottom:90px;position:relative;overflow:hidden;background:radial-gradient(900px 500px at 85% 10%,rgba(124,92,255,.18),transparent 60%),radial-gradient(700px 400px at 0% 0%,var(--sky-2),transparent 60%)}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hello{display:inline-block;padding:7px 16px;border-radius:999px;background:var(--surface-solid);border:1px solid var(--border);font-weight:700;font-size:.95rem;color:var(--navy-2);margin-bottom:20px}
+[data-theme="dark"] .hello{color:var(--purple-2)}
+.hero h1{font-size:clamp(2rem,4.8vw,3.4rem);color:var(--navy);margin-bottom:18px}
+[data-theme="dark"] .hero h1{color:#fff}
+.hero p.lead{font-size:1.1rem;color:var(--muted);max-width:520px;margin-bottom:28px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+.tagline{font-weight:700;color:var(--purple);display:flex;align-items:center;gap:10px}
+.tagline::before{content:"";width:34px;height:3px;border-radius:3px;background:var(--purple)}
+.photo-wrap{position:relative;display:grid;place-items:center}
+.photo-wrap::before{content:"";position:absolute;width:88%;aspect-ratio:1;border-radius:50%;background:conic-gradient(from 160deg,var(--navy-2),var(--purple),var(--sky-2),var(--navy-2));filter:blur(2px);opacity:.9}
+.photo{position:relative;width:78%;aspect-ratio:1;border-radius:50%;border:8px solid var(--surface-solid);overflow:hidden;background:linear-gradient(135deg,var(--navy-2),var(--purple));display:grid;place-items:center;box-shadow:0 20px 50px rgba(11,31,77,.3)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo .initials{font-family:var(--head);font-weight:800;font-size:clamp(3rem,9vw,5rem);color:#fff;letter-spacing:.04em}
+.photo-note{position:absolute;bottom:-4px;font-size:.75rem;color:var(--muted);background:var(--surface-solid);border:1px dashed var(--border);padding:3px 12px;border-radius:999px}
+
+/* Grids */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card h3{font-size:1.1rem;margin-bottom:8px;color:var(--navy)}
+[data-theme="dark"] .card h3{color:#fff}
+.card p{color:var(--muted);font-size:.95rem}
+
+/* About */
+.about-text{font-size:1.06rem;max-width:820px;margin-bottom:34px}
+.about-text+.grid-3 .card{text-align:left}
+
+/* Education timeline */
+.timeline{position:relative;padding-left:34px;max-width:780px}
+.timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--purple),var(--sky-2))}
+.t-item{position:relative;margin-bottom:22px}
+.t-item::before{content:"";position:absolute;left:-34px;top:28px;width:20px;height:20px;border-radius:50%;background:var(--surface-solid);border:4px solid var(--purple)}
+.t-item.placeholder::before{border-color:var(--sky-2)}
+.badge{display:inline-block;padding:4px 12px;border-radius:999px;font-size:.78rem;font-weight:700;background:var(--sky);color:var(--navy-2);margin-top:8px}
+[data-theme="dark"] .badge{color:var(--purple-2)}
+.badge.live{background:rgba(124,92,255,.15);color:var(--purple)}
+.meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px;font-size:.88rem;color:var(--muted)}
+.ph{font-style:italic;opacity:.8}
+
+/* Skills */
+.skill-group{margin-bottom:36px}
+.skill-group>h3{font-size:1.15rem;margin-bottom:16px;display:flex;align-items:center;gap:10px;color:var(--navy)}
+[data-theme="dark"] .skill-group>h3{color:#fff}
+.skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.skill{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--surface);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:16px;transition:transform .25s,border-color .25s}
+.skill:hover{transform:translateY(-3px);border-color:rgba(124,92,255,.45)}
+.skill .chip-icon{margin:0;width:40px;height:40px;font-size:1.1rem;border-radius:12px}
+.skill b{display:block;font-size:.95rem;font-weight:700}
+.level{display:inline-block;margin-top:2px;font-size:.74rem;font-weight:700;padding:2px 10px;border-radius:999px}
+.level.int{background:rgba(34,160,107,.14);color:#168a5b}
+.level.beg{background:rgba(59,130,246,.14);color:#2563eb}
+.level.learn{background:rgba(124,92,255,.15);color:var(--purple)}
+[data-theme="dark"] .level.int{color:#4fd1a0}[data-theme="dark"] .level.beg{color:#7fb0ff}
+
+/* Projects */
+.featured{display:grid;grid-template-columns:1.1fr 1fr;gap:0;padding:0;overflow:hidden;margin-bottom:26px;background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;border:none}
+.featured:hover{transform:none}
+.featured .f-visual{display:grid;place-items:center;min-height:240px;background:radial-gradient(circle at 30% 30%,rgba(168,151,255,.45),transparent 60%);font-size:4rem;color:rgba(255,255,255,.85)}
+.featured .f-body{padding:34px}
+.featured h3{color:#fff;font-size:1.4rem;margin:8px 0 10px}
+.featured p{color:#cdd8f3}
+.f-tag{display:inline-block;background:rgba(255,255,255,.14);padding:4px 14px;border-radius:999px;font-size:.78rem;font-weight:700}
+.project{display:flex;flex-direction:column}
+.project .row{margin-top:12px;font-size:.9rem}
+.project .row b{color:var(--navy-2);display:block;font-size:.78rem;margin-bottom:2px}
+[data-theme="dark"] .project .row b{color:var(--purple-2)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.tags span{font-size:.78rem;padding:3px 10px;border-radius:999px;background:var(--sky);color:var(--muted);border:1px dashed var(--border)}
+.card-actions{margin-top:auto;padding-top:20px;display:flex;gap:10px;flex-wrap:wrap}
+
+/* Certifications */
+.cert .meta{margin:6px 0 10px}
+.cert .tags span{border-style:dashed}
+
+/* Journey / roadmap */
+#journey{background:linear-gradient(180deg,transparent,var(--sky) 20%,var(--sky) 80%,transparent)}
+.learn-list{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:38px}
+.learn-list span{display:flex;align-items:center;gap:8px;background:var(--surface-solid);border:1px solid var(--border);padding:9px 18px;border-radius:999px;font-weight:700;font-size:.9rem;box-shadow:var(--shadow)}
+.learn-list svg{color:var(--purple)}
+.roadmap{display:flex;align-items:stretch;gap:0;overflow-x:auto;padding:10px 4px 22px;scrollbar-width:thin}
+.step{flex:1 0 120px;text-align:center;position:relative;padding:0 6px}
+.step .dot{width:56px;height:56px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;background:var(--surface-solid);border:3px solid var(--sky-2);color:var(--navy-2);font-size:1.3rem;position:relative;z-index:1;transition:.25s}
+.step:hover .dot{border-color:var(--purple);transform:scale(1.08)}
+.step:not(:last-child)::after{content:"";position:absolute;top:28px;left:calc(50% + 32px);right:calc(-50% + 32px);height:3px;background:repeating-linear-gradient(90deg,var(--purple-2) 0 8px,transparent 8px 14px)}
+.step.goal .dot{background:linear-gradient(135deg,var(--navy-2),var(--purple));color:#fff;border-color:transparent}
+.step span{font-weight:700;font-size:.85rem}
+.journey-msg{margin-top:20px;text-align:center;font-weight:700;color:var(--navy-2);background:var(--surface-solid);border:1px solid var(--border);padding:16px 22px;border-radius:var(--radius);display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap}
+[data-theme="dark"] .journey-msg{color:var(--purple-2)}
+
+/* Resume */
+.resume{text-align:center;padding:52px 28px;background:linear-gradient(135deg,var(--navy),var(--navy-2) 60%,#4a3aa8);border:none;color:#fff}
+.resume:hover{transform:none}
+.resume h2{color:#fff;font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:10px}
+.resume p{color:#d3dcf5;max-width:560px;margin:0 auto 26px;font-size:1rem}
+.resume .btn{background:#fff;color:var(--navy);}
+.resume .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.25)}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
+.contact-list{display:grid;gap:14px;margin-top:24px}
+.contact-item{display:flex;gap:14px;align-items:center;padding:14px 18px;background:var(--surface);border:1px solid var(--border);border-radius:14px}
+.contact-item .chip-icon{margin:0;width:40px;height:40px;font-size:1.05rem;border-radius:12px}
+.contact-item small{display:block;color:var(--muted);font-size:.78rem}
+form.card{display:grid;gap:16px}
+form.card:hover{transform:none}
+label{font-weight:700;font-size:.85rem;display:block;margin-bottom:6px}
+input,textarea{width:100%;padding:13px 16px;border-radius:12px;border:1px solid var(--border);background:var(--surface-solid);color:var(--text);font:inherit;transition:border-color .2s,box-shadow .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--purple);box-shadow:0 0 0 4px rgba(124,92,255,.18)}
+textarea{min-height:130px;resize:vertical}
+.form-note{font-size:.84rem;color:var(--muted);min-height:1.2em}
+
+/* Footer */
+footer{background:var(--navy);color:#cdd8f3;padding:48px 0 26px;margin-top:40px}
+.foot{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;align-items:flex-start}
+.foot h4{color:#fff;font-size:1.15rem;margin-bottom:4px}
+.foot p{font-size:.92rem}
+.social{display:flex;gap:10px}
+.social a{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(255,255,255,.25);color:#fff;font-size:1.1rem;transition:.2s}
+.social a:hover{background:var(--purple);border-color:var(--purple);transform:translateY(-3px)}
+.copy{border-top:1px solid rgba(255,255,255,.14);margin-top:30px;padding-top:20px;text-align:center;font-size:.85rem}
+
+/* Scroll reveal: one restrained effect */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;text-align:center}
+  .hero p.lead{margin-inline:auto}
+  .hero-btns,.tagline{justify-content:center}
+  .photo-wrap{order:-1;max-width:320px;margin-inline:auto}
+  .grid-3{grid-template-columns:1fr 1fr}
+  .featured,.contact{grid-template-columns:1fr}
+  .featured .f-visual{min-height:150px}
+}
+@media(max-width:760px){
+  section{padding:70px 0}
+  .menu-btn{display:grid}
+  .nav-links{position:fixed;top:68px;left:0;right:0;flex-direction:column;background:var(--surface-solid);padding:14px 4%;border-bottom:1px solid var(--border);gap:2px;transform:translateY(-130%);transition:transform .3s;box-shadow:var(--shadow)}
+  .nav-links.open{transform:none}
+  .nav-links a{display:block;padding:12px 14px}
+  .nav-links li{width:100%}
+}
+@media(max-width:600px){
+  .grid-3,.grid-2{grid-template-columns:1fr}
+  .roadmap{justify-content:flex-start}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- SVG icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/></symbol>
+    <symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14a5 5 0 0 0 8 0"/><path d="M9 9h.01M15 9h.01"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></symbol>
+    <symbol id="i-table" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></symbol>
+    <symbol id="i-bar" viewBox="0 0 24 24"><path d="M6 20V10M12 20V4M18 20v-7"/></symbol>
+    <symbol id="i-broom" viewBox="0 0 24 24"><path d="M19 3l-7 7"/><path d="M10 10l4 4-5 6c-3 0-5-1-6-2 2-1 3-3 3-5z"/></symbol>
+    <symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 5H6l6 7-6 7h12"/></symbol>
+    <symbol id="i-chip" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+    <symbol id="i-dash" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="10" rx="1.5"/><rect x="13" y="3" width="8" height="6" rx="1.5"/><rect x="13" y="11" width="8" height="10" rx="1.5"/><rect x="3" y="15" width="8" height="6" rx="1.5"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2.5.6 4 2.5 4 5"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-5.4A8 8 0 1 1 21 12z"/></symbol>
+    <symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M10 3a2 2 0 1 1 4 0v2h4v4h2a2 2 0 1 1 0 4h-2v4h-4v-2a2 2 0 1 0-4 0v2H6v-4H4a2 2 0 1 1 0-4h2V5h4z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v6M8 7.5v.01M12 16v-6M12 12.5c0-1.5 1-2.5 2.5-2.5S17 11 17 12.5V16"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="logo" aria-label="S. Kanishka home">S. Kanishka<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode"><svg class="icon"><use href="#i-moon"/></svg></button>
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><svg class="icon"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HOME -->
+<section id="home">
+  <div class="container hero">
+    <div class="reveal">
+      <span class="hello">Hi, I'm S. Kanishka</span>
+      <h1>ECE Student | Aspiring Data Analyst</h1>
+      <p class="lead">Passionate about data, technology and transforming information into meaningful insights.</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary"><svg class="icon"><use href="#i-folder"/></svg>View My Projects</a>
+        <a href="#contact" class="btn btn-outline"><svg class="icon"><use href="#i-mail"/></svg>Contact Me</a>
+      </div>
+      <p class="tagline">Turning data into meaningful insights.</p>
+    </div>
+    <div class="photo-wrap reveal">
+      <div class="photo">
+        <!-- 👉 To use your photo: delete the initials span below and uncomment the img line.
+             Put your photo file (e.g. kanishka.jpg) in the same folder as this index.html -->
+        <!-- <img src="kanishka.jpg" alt="Portrait of S. Kanishka"> -->
+        <span class="initials" id="photoInitials">SK</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="sec-head reveal"><h2>About Me</h2></div>
+    <p class="about-text reveal">I am S. Kanishka, currently pursuing B.E. Electronics and Communication Engineering at M. Kumarasamy College of Engineering. I am a positive-minded person who enjoys learning, exploring new technologies and solving problems. My interest in Data Analysis motivates me to learn how data can be collected, processed, visualized and interpreted to discover meaningful insights. My goal is to start my career as a Data Analyst and continuously improve my analytical and technical skills.</p>
+    <div class="grid-3">
+      <div class="card reveal"><div class="chip-icon"><svg class="icon"><use href="#i-smile"/></svg></div><h3>Positive Mindset</h3><p>Approaching every challenge with enthusiasm and a willingness to grow.</p></div>
+      <div class="card reveal"><div class="chip-icon"><svg class="icon"><use href="#i-search"/></svg></div><h3>Analytical Thinking</h3><p>Breaking problems into parts and looking for the patterns inside the data.</p></div>
+      <div class="card reveal"><div class="chip-icon"><svg class="icon"><use href="#i-book"/></svg></div><h3>Continuous Learning</h3><p>Curious about new tools and technologies, and always building new skills.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="sec-head reveal"><h2>Education</h2><p>My academic background so far.</p></div>
+    <div class="timeline">
+      <div class="t-item reveal">
+        <div class="card">
+          <div class="chip-icon"><svg class="icon"><use href="#i-cap"/></svg></div>
+          <h3>B.E. Electronics and Communication Engineering</h3>
+          <p>M. Kumarasamy College of Engineering</p>
+          <span class="badge live">Currently Pursuing</span>
+        </div>
+      </div>
+      <div class="t-item placeholder reveal">
+        <div class="card">
+          <div class="chip-icon"><svg class="icon"><use href="#i-book"/></svg></div>
+          <h3>Higher Secondary Education</h3>
+          <p class="ph">[School Name]</p>
+          <div class="meta"><span class="ph">Year: [Add year]</span><span class="ph">Percentage / CGPA: [Add score]</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="sec-head reveal"><h2>Skills</h2><p>Honest levels: what I use confidently and what I am still learning.</p></div>
+
+    <div class="skill-group reveal">
+      <h3><svg class="icon"><use href="#i-gear"/></svg>Technical Skills</h3>
+      <div class="skills">
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-code"/></svg></div><div><b>Python</b><span class="level learn">Currently Learning</span></div></div>
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-db"/></svg></div><div><b>SQL</b><span class="level learn">Currently Learning</span></div></div>
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-table"/></svg></div><div><b>Microsoft Excel</b><span class="level beg">Beginner</span></div></div>
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-dash"/></svg></div><div><b>Power BI</b><span class="level learn">Currently Learning</span></div></div>
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-chart"/></svg></div><div><b>Data Visualization</b><span class="level beg">Beginner</span></div></div>
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-broom"/></svg></div><div><b>Data Cleaning</b><span class="level beg">Beginner</span></div></div>
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-sigma"/></svg></div><div><b>Basic Statistics</b><span class="level beg">Beginner</span></div></div>
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-chip"/></svg></div><div><b>Electronics &amp; Embedded Systems</b><span class="level int">Intermediate</span></div></div>
+      </div>
+    </div>
+
+    <div class="skill-group reveal">
+      <h3><svg class="icon"><use href="#i-code"/></svg>Programming</h3>
+      <div class="skills">
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-code"/></svg></div><div><b>Python</b><span class="level learn">Currently Learning</span></div></div>
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-code"/></svg></div><div><b>C</b><span class="level beg">Beginner</span></div></div>
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-code"/></svg></div><div><b>Java</b><span class="level beg">Beginner</span></div></div>
+      </div>
+    </div>
+
+    <div class="skill-group reveal">
+      <h3><svg class="icon"><use href="#i-chart"/></svg>Data Analysis Skills</h3>
+      <div class="skills">
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-broom"/></svg></div><div><b>Data Cleaning</b><span class="level beg">Beginner</span></div></div>
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-gear"/></svg></div><div><b>Data Processing</b><span class="level beg">Beginner</span></div></div>
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-search"/></svg></div><div><b>Exploratory Data Analysis</b><span class="level learn">Currently Learning</span></div></div>
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-bar"/></svg></div><div><b>Data Visualization</b><span class="level beg">Beginner</span></div></div>
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-dash"/></svg></div><div><b>Dashboard Creation</b><span class="level learn">Currently Learning</span></div></div>
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-sigma"/></svg></div><div><b>Basic Statistical Analysis</b><span class="level beg">Beginner</span></div></div>
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-trend"/></svg></div><div><b>Trend Analysis</b><span class="level learn">Currently Learning</span></div></div>
+      </div>
+    </div>
+
+    <div class="skill-group reveal">
+      <h3><svg class="icon"><use href="#i-users"/></svg>Soft Skills</h3>
+      <div class="skills">
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-smile"/></svg></div><div><b>Positive Attitude</b></div></div>
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-chat"/></svg></div><div><b>Communication</b></div></div>
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-users"/></svg></div><div><b>Teamwork</b></div></div>
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-puzzle"/></svg></div><div><b>Problem Solving</b></div></div>
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-clock"/></svg></div><div><b>Time Management</b></div></div>
+        <div class="skill"><div class="chip-icon"><svg class="icon"><use href="#i-bolt"/></svg></div><div><b>Quick Learning</b></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="sec-head reveal"><h2>Projects</h2><p>Replace the placeholders below with your real project details.</p></div>
+
+    <article class="card featured reveal">
+      <div class="f-visual"><svg class="icon" style="width:1em;height:1em"><use href="#i-chart"/></svg></div>
+      <div class="f-body">
+        <span class="f-tag">Featured Project</span>
+        <h3>[Featured Project Title]</h3>
+        <p>[Describe your best academic or project work here: the problem you worked on, the data you used and what you found.]</p>
+        <div class="tags" style="margin:14px 0 20px"><span style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3)">[Technology]</span><span style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3)">[Technology]</span></div>
+        <div class="card-actions" style="padding-top:0">
+          <a href="#" class="btn btn-sm" style="background:#fff;color:var(--navy)" data-placeholder><svg class="icon"><use href="#i-github"/></svg>GitHub</a>
+          <a href="#" class="btn btn-sm" style="border-color:#fff;color:#fff" data-placeholder><svg class="icon"><use href="#i-link"/></svg>View Project</a>
+        </div>
+      </div>
+    </article>
+
+    <div class="grid-3" id="projectGrid"></div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="container">
+    <div class="sec-head reveal"><h2>Certifications</h2><p>Add your certificates as you complete them.</p></div>
+    <div class="grid-3" id="certGrid"></div>
+  </div>
+</section>
+
+<!-- DATA ANALYTICS JOURNEY -->
+<section id="journey">
+  <div class="container">
+    <div class="sec-head reveal"><h2>My Data Analytics Journey</h2><p>I am developing my skills in these areas, one step at a time.</p></div>
+    <div class="learn-list reveal">
+      <span><svg class="icon"><use href="#i-table"/></svg>Excel</span>
+      <span><svg class="icon"><use href="#i-db"/></svg>SQL</span>
+      <span><svg class="icon"><use href="#i-code"/></svg>Python</span>
+      <span><svg class="icon"><use href="#i-gear"/></svg>Pandas</span>
+      <span><svg class="icon"><use href="#i-bar"/></svg>Data Visualization</span>
+      <span><svg class="icon"><use href="#i-dash"/></svg>Power BI</span>
+      <span><svg class="icon"><use href="#i-sigma"/></svg>Statistics</span>
+    </div>
+    <div class="roadmap reveal" role="list" aria-label="Learning roadmap">
+      <div class="step" role="listitem"><div class="dot"><svg class="icon"><use href="#i-table"/></svg></div><span>Excel</span></div>
+      <div class="step" role="listitem"><div class="dot"><svg class="icon"><use href="#i-db"/></svg></div><span>SQL</span></div>
+      <div class="step" role="listitem"><div class="dot"><svg class="icon"><use href="#i-code"/></svg></div><span>Python</span></div>
+      <div class="step" role="listitem"><div class="dot"><svg class="icon"><use href="#i-broom"/></svg></div><span>Data Cleaning</span></div>
+      <div class="step" role="listitem"><div class="dot"><svg class="icon"><use href="#i-search"/></svg></div><span>Data Analysis</span></div>
+      <div class="step" role="listitem"><div class="dot"><svg class="icon"><use href="#i-bar"/></svg></div><span>Visualization</span></div>
+      <div class="step" role="listitem"><div class="dot"><svg class="icon"><use href="#i-dash"/></svg></div><span>Power BI</span></div>
+      <div class="step goal" role="listitem"><div class="dot"><svg class="icon"><use href="#i-target"/></svg></div><span>Data Analyst</span></div>
+    </div>
+    <div class="journey-msg reveal"><svg class="icon"><use href="#i-bolt"/></svg>Currently learning and building practical projects in Data Analytics.</div>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section style="padding:60px 0">
+  <div class="container">
+    <div class="card resume reveal">
+      <h2>Want to know more about me?</h2>
+      <p>Download my resume to learn more about my education, skills, projects and career interests.</p>
+      <!-- 👉 Replace "resume.pdf" with your real file name and put it beside index.html -->
+      <a href="resume.pdf" download class="btn" id="resumeBtn"><svg class="icon"><use href="#i-download"/></svg>Download Resume</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container contact">
+    <div class="reveal">
+      <div class="sec-head" style="margin-bottom:0"><h2>Let's Connect</h2>
+      <p>I am always interested in learning, collaborating and exploring opportunities in Data Analytics and technology.</p></div>
+      <div class="contact-list">
+        <div class="contact-item"><div class="chip-icon"><svg class="icon"><use href="#i-mail"/></svg></div><div><small>Email</small><span class="ph" id="cEmail">[Your email address]</span></div></div>
+        <div class="contact-item"><div class="chip-icon"><svg class="icon"><use href="#i-linkedin"/></svg></div><div><small>LinkedIn</small><span class="ph">[Your LinkedIn profile link]</span></div></div>
+        <div class="contact-item"><div class="chip-icon"><svg class="icon"><use href="#i-github"/></svg></div><div><small>GitHub</small><span class="ph">[Your GitHub profile link]</span></div></div>
+        <div class="contact-item"><div class="chip-icon"><svg class="icon"><use href="#i-phone"/></svg></div><div><small>Phone Number</small><span class="ph">[Your phone number]</span></div></div>
+      </div>
+    </div>
+    <form class="card reveal" id="contactForm" novalidate>
+      <div><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+      <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      <div><label for="subject">Subject</label><input id="subject" name="subject" type="text" required></div>
+      <div><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
+      <button type="submit" class="btn btn-primary" style="justify-self:start"><svg class="icon"><use href="#i-send"/></svg>Send Message</button>
+      <p class="form-note" id="formNote" role="status"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div>
+        <h4>S. Kanishka</h4>
+        <p>B.E. Electronics and Communication Engineering</p>
+        <p>Aspiring Data Analyst</p>
+      </div>
+      <div class="social">
+        <!-- 👉 Replace each "#" with your real link -->
+        <a href="#" aria-label="LinkedIn" data-placeholder><svg class="icon"><use href="#i-linkedin"/></svg></a>
+        <a href="#" aria-label="GitHub" data-placeholder><svg class="icon"><use href="#i-github"/></svg></a>
+        <a href="#" aria-label="Email" data-placeholder><svg class="icon"><use href="#i-mail"/></svg></a>
+      </div>
+    </div>
+    <p class="copy">&copy; 2026 S. Kanishka. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+/* ================= EDIT YOUR DETAILS HERE ================= */
+const CONFIG = {
+  email: "",      // e.g. "yourname@gmail.com"  (leave empty until you have it)
+  linkedin: "",   // full LinkedIn URL
+  github: ""      // full GitHub URL
+};
+const PROJECTS = [1,2,3].map(n => ({
+  title: "[Project Title " + n + "]",
+  desc: "[Short description of the project.]",
+  tech: ["[Technology]", "[Technology]"],
+  contribution: "[What you did in this project.]",
+  outcome: "[Key outcome or result.]",
+  github: "", demo: ""
+}));
+const CERTS = [1,2,3].map(n => ({
+  name: "[Certification Name]",
+  org: "[Issuing Organization]",
+  date: "[Month Year]",
+  skills: ["[Skill learned]", "[Skill learned]"],
+  link: ""
+}));
+/* ========================================================== */
+
+const icon = id => `<svg class="icon"><use href="#${id}"/></svg>`;
+
+// Render projects
+document.getElementById('projectGrid').innerHTML = PROJECTS.map(p => `
+  <article class="card project reveal">
+    <div class="chip-icon">${icon('i-folder')}</div>
+    <h3 class="${p.title.startsWith('[') ? 'ph' : ''}">${p.title}</h3>
+    <p class="${p.desc.startsWith('[') ? 'ph' : ''}">${p.desc}</p>
+    <div class="row"><b>Technologies used</b><div class="tags">${p.tech.map(t=>`<span>${t}</span>`).join('')}</div></div>
+    <div class="row"><b>My contribution</b>${p.contribution}</div>
+    <div class="row"><b>Key outcome</b>${p.outcome}</div>
+    <div class="card-actions">
+      <a class="btn btn-outline btn-sm" href="${p.github||'#'}" ${p.github?'target="_blank" rel="noopener"':'data-placeholder'}>${icon('i-github')}GitHub</a>
+      <a class="btn btn-primary btn-sm" href="${p.demo||'#'}" ${p.demo?'target="_blank" rel="noopener"':'data-placeholder'}>${icon('i-link')}View Project</a>
+    </div>
+  </article>`).join('');
+
+// Render certifications
+document.getElementById('certGrid').innerHTML = CERTS.map(c => `
+  <article class="card cert reveal">
+    <div class="chip-icon">${icon('i-award')}</div>
+    <h3 class="${c.name.startsWith('[') ? 'ph' : ''}">${c.name}</h3>
+    <p class="${c.org.startsWith('[') ? 'ph' : ''}">${c.org}</p>
+    <div class="meta"><span>${icon('i-clock')} ${c.date}</span></div>
+    <div class="tags">${c.skills.map(s=>`<span>${s}</span>`).join('')}</div>
+    <div class="card-actions"><a class="btn btn-outline btn-sm" href="${c.link||'#'}" ${c.link?'target="_blank" rel="noopener"':'data-placeholder'}>${icon('i-link')}Certificate Link</a></div>
+  </article>`).join('');
+
+// Apply real links when provided
+const setLink = (label, url) => { if(!url) return; const a = document.querySelector(`.social a[aria-label="${label}"]`); a.href = url; a.target = "_blank"; a.rel = "noopener"; a.removeAttribute('data-placeholder'); };
+setLink('LinkedIn', CONFIG.linkedin); setLink('GitHub', CONFIG.github);
+if (CONFIG.email){ const a=document.querySelector('.social a[aria-label="Email"]'); a.href='mailto:'+CONFIG.email; a.removeAttribute('data-placeholder'); const e=document.getElementById('cEmail'); e.textContent=CONFIG.email; e.classList.remove('ph'); }
+
+// Placeholder links should not jump to top of page
+document.addEventListener('click', e => {
+  const a = e.target.closest('[data-placeholder]');
+  if (a) e.preventDefault();
+});
+
+// Mobile menu
+const menuBtn = document.getElementById('menuBtn'), navLinks = document.getElementById('navLinks');
+menuBtn.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', open);
+});
+navLinks.addEventListener('click', e => { if(e.target.tagName==='A'){ navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false); } });
+
+// Dark mode (remembers choice when storage is available)
+const themeBtn = document.getElementById('themeBtn');
+const applyTheme = t => { document.documentElement.setAttribute('data-theme', t); themeBtn.innerHTML = icon(t==='dark' ? 'i-sun' : 'i-moon'); };
+let saved = null; try { saved = localStorage.getItem('theme'); } catch(e){}
+applyTheme(saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+themeBtn.addEventListener('click', () => {
+  const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  applyTheme(next); try { localStorage.setItem('theme', next); } catch(e){}
+});
+
+// Scroll reveal
+const io = new IntersectionObserver(entries => entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }), {threshold:.12});
+document.querySelectorAll('.reveal').forEach((el,i) => { el.style.transitionDelay = (i%3)*70 + 'ms'; io.observe(el); });
+
+// Active nav link
+const links = [...document.querySelectorAll('.nav-links a')];
+const spy = new IntersectionObserver(entries => entries.forEach(en => {
+  if(en.isIntersecting){ links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id)); }
+}), {rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('section[id]').forEach(s => spy.observe(s));
+
+// Contact form: opens the visitor's email app once your email is set in CONFIG
+document.getElementById('contactForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.target, note = document.getElementById('formNote');
+  if(!f.name.value.trim() || !f.email.value.trim() || !f.subject.value.trim() || !f.message.value.trim()){ note.textContent = 'Please fill in all fields.'; return; }
+  if(!/^\S+@\S+\.\S+$/.test(f.email.value)){ note.textContent = 'Please enter a valid email address.'; return; }
+  if(!CONFIG.email){ note.textContent = 'Contact form is not connected yet. Add your email in the CONFIG section.'; return; }
+  const body = encodeURIComponent(`Name: ${f.name.value}\nEmail: ${f.email.value}\n\n${f.message.value}`);
+  location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent(f.subject.value)}&body=${body}`;
+  note.textContent = 'Opening your email app…';
+});
+</script>
+</body>
+</html>
